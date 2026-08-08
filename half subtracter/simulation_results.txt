@@ -1,0 +1,72 @@
+# Half Subtractor using Verilog
+
+## Overview
+
+A Half Subtractor is a combinational logic circuit that subtracts one single-bit binary number (B) from another single-bit binary number (A).
+
+It has:
+- Two Inputs: A, B
+- Two Outputs:
+  - Difference (D)
+  - Borrow (Bo)
+
+## Truth Table
+
+| A | B | Difference | Borrow |
+|---|---|------------|--------|
+| 0 | 0 |     0      |   0    |
+| 0 | 1 |     1      |   1    |
+| 1 | 0 |     1      |   0    |
+| 1 | 1 |     0      |   0    |
+
+## Boolean Expressions
+
+Difference = A XOR B
+
+Borrow = A' AND B
+
+## Files
+
+- `half_subtractor.v` - Verilog implementation
+- `half_subtractor_tb.v` - Testbench
+- `simulation_results.txt` - Simulation output
+- `waveform.png` - Simulation waveform
+
+## Software Used
+
+- Icarus Verilog
+- GTKWave
+
+## How to Run
+
+Compile:
+
+```bash
+iverilog -o half_subtractor half_subtractor.v half_subtractor_tb.v
+```
+
+Run:
+
+```bash
+vvp half_subtractor
+```
+
+View waveform:
+
+```bash
+gtkwave half_subtractor.vcd
+```
+
+## Expected Output
+
+```
+A B | Difference Borrow
+0 0 |     0        0
+0 1 |     1        1
+1 0 |     1        0
+1 1 |     0        0
+```
+
+## Author
+
+Your Name
